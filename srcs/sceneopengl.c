@@ -25,6 +25,8 @@ void		key_callback(GLFWwindow *window, int k, int s, int action, int mods)
 		move(1);
 	if (k == GLFW_KEY_LEFT && (action == GLFW_PRESS || action == GLFW_REPEAT))
 		move(-1);
+	if (k == GLFW_KEY_SPACE && action == GLFW_PRESS)
+		get_glide(0)->pause = (get_glide(0)->pause == 0)? 1 : 0;
 }
 
 void		paddle_collision(t_gl *gl)
@@ -51,6 +53,8 @@ int			move_ball(t_gl *gl)
 {
 	float	rat;
 
+	if (gl->pause)
+		return (1);
 	rat = gl->scale.x / gl->player.size;
 	if (gl->ball.y - gl->ball.radius <= -1)
 		gl->ball.dy *= -1;

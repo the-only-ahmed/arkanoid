@@ -71,6 +71,8 @@ void				move(int dir)
 	t_gl	*gl;
 
 	gl = get_glide(0);
+	if (gl->pause)
+		return ;
 	gl->player.speed = dir;
 	mv = (float)dir / 15.f;
 	ret = gl->scale.x / gl->player.size;

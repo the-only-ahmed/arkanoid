@@ -60,6 +60,7 @@ static int			looping(t_gl *gl, int sc, char *level, int lvl)
 	gl->map->map = ft_lecture(level, &(gl->map->nb_l), &(gl->map->nb_c));
 	gl->player = set_player();
 	gl->ball = set_ball(gl);
+	gl->pause = 0;
 	gl->score = sc;
 	scene(gl, "ARKANOID", 800, 600);
 	lvl = initialiser_fenetre(gl, lvl);

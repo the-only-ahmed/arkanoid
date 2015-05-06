@@ -27,7 +27,7 @@ typedef struct		s_ball
 {
 	float			x;
 	float			y;
-	int				seg;
+	int			seg;
 	float			dx;
 	float			dy;
 	float			radius;
@@ -39,7 +39,7 @@ typedef struct		s_player
 	float			x;
 	float			y;
 	float			speed;
-	int				size;
+	int			size;
 }					t_player;
 
 typedef struct		s_map
@@ -51,15 +51,16 @@ typedef struct		s_map
 
 typedef struct		s_gl
 {
+	int				pause;
 	int				this;
 	int				score;
 	t_ball			ball;
-	t_player		player;
-	t_map			*map;
+	t_player			player;
+	t_map				*map;
 	t_vec3			scale;
 	int				width;
 	int				height;
-	char			*titre;
+	char				*titre;
 	GLFWwindow		*window;
 }					t_gl;
 
